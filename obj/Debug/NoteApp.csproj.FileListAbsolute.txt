@@ -45,3 +45,15 @@ C:\Users\yusuf\source\repos\NoteApp\bin\Debug\System.ValueTuple.xml
 C:\Users\yusuf\source\repos\NoteApp\obj\Debug\NoteApp.csproj.SuggestedBindingRedirects.cache
 C:\Users\yusuf\source\repos\NoteApp\obj\Debug\NoteApp.Forms.FormRegister.resources
 C:\Users\yusuf\source\repos\NoteApp\obj\Debug\NoteApp.csproj.Up2Date
+C:\Users\yusuf\source\repos\NoteApp\bin\Debug\Microsoft.Bcl.TimeProvider.dll
+C:\Users\yusuf\source\repos\NoteApp\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\yusuf\source\repos\NoteApp\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\yusuf\source\repos\NoteApp\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\yusuf\source\repos\NoteApp\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\yusuf\source\repos\NoteApp\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\yusuf\source\repos\NoteApp\bin\Debug\Microsoft.Bcl.TimeProvider.xml
+C:\Users\yusuf\source\repos\NoteApp\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\yusuf\source\repos\NoteApp\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\yusuf\source\repos\NoteApp\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\yusuf\source\repos\NoteApp\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\yusuf\source\repos\NoteApp\bin\Debug\System.IdentityModel.Tokens.Jwt.xml

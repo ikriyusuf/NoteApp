@@ -3,15 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\yusuf\\source\\repos\\NoteApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{106C7BEF-76B2-4702-AB4C-094F191A1EEC}|NoteApp.csproj|c:\\users\\yusuf\\source\\repos\\noteapp\\entities\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{106C7BEF-76B2-4702-AB4C-094F191A1EEC}|NoteApp.csproj|solutionrelative:entities\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{106C7BEF-76B2-4702-AB4C-094F191A1EEC}|NoteApp.csproj|c:\\users\\yusuf\\source\\repos\\noteapp\\forms\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{106C7BEF-76B2-4702-AB4C-094F191A1EEC}|NoteApp.csproj|solutionrelative:forms\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{106C7BEF-76B2-4702-AB4C-094F191A1EEC}|NoteApp.csproj|c:\\users\\yusuf\\source\\repos\\noteapp\\forms\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{106C7BEF-76B2-4702-AB4C-094F191A1EEC}|NoteApp.csproj|C:\\Users\\yusuf\\source\\repos\\NoteApp\\forms\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{106C7BEF-76B2-4702-AB4C-094F191A1EEC}|NoteApp.csproj|solutionrelative:forms\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -83,40 +79,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Note.cs",
-              "DocumentMoniker": "C:\\Users\\yusuf\\source\\repos\\NoteApp\\Entities\\Note.cs",
-              "RelativeDocumentMoniker": "Entities\\Note.cs",
-              "ToolTip": "C:\\Users\\yusuf\\source\\repos\\NoteApp\\Entities\\Note.cs",
-              "RelativeToolTip": "Entities\\Note.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T17:58:00.638Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "FormMain.cs",
               "DocumentMoniker": "C:\\Users\\yusuf\\source\\repos\\NoteApp\\Forms\\FormMain.cs",
               "RelativeDocumentMoniker": "Forms\\FormMain.cs",
               "ToolTip": "C:\\Users\\yusuf\\source\\repos\\NoteApp\\Forms\\FormMain.cs",
               "RelativeToolTip": "Forms\\FormMain.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAqwMIAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAIwNwAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T15:49:46.655Z",
+              "WhenOpened": "2025-07-22T05:43:37.641Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "FormMain.cs [Design]",
               "DocumentMoniker": "C:\\Users\\yusuf\\source\\repos\\NoteApp\\Forms\\FormMain.cs",
               "RelativeDocumentMoniker": "Forms\\FormMain.cs",
               "ToolTip": "C:\\Users\\yusuf\\source\\repos\\NoteApp\\Forms\\FormMain.cs [Design]",
               "RelativeToolTip": "Forms\\FormMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T12:44:11.116Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-07-21T12:44:11.116Z"
             }
           ]
         },

@@ -1,4 +1,5 @@
-﻿using NoteApp.Security;
+﻿using NoteApp.Entities;
+using NoteApp.Security;
 using Npgsql;
 using System;
 
@@ -29,20 +30,32 @@ namespace NoteApp.Services
             return result > 0;
         }
 
-        public bool UserLogin(string userName, string password)
+        public UserDto UserLogin(string userName, string password)
         {
             var conn = GetConnection();
             conn.Open();
-            string query = "SELECT PasswordHash FROM users WHERE Username = @Username";
+
+            string query = "SELECT userid, passwordhash FROM users WHERE Username = @Username";
             var cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("Username", userName);
+
             var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                string storedHash = reader.GetString(0);
-                return PasswordHelper.VerifyPassword(password, storedHash);
+                int userId = reader.GetInt32(0);
+                string storedHash = reader.GetString(1);
+
+                if (PasswordHelper.VerifyPassword(password, storedHash))
+                {
+                    return new UserDto
+                    {
+                        Id = userId,
+                        UserName = userName
+                    };
+                }
             }
-            return false;
+
+            return null; // Giriş başarısız
 
         }
 
@@ -53,7 +66,7 @@ namespace NoteApp.Services
             var conn = GetConnection();
             conn.Open();
 
-             var cmd = new NpgsqlCommand(query, conn);
+            var cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("Username", username);
 
             var result = cmd.ExecuteScalar();

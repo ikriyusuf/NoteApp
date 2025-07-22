@@ -1,4 +1,5 @@
-﻿using NoteApp.Services;
+﻿using NoteApp.JWT;
+using NoteApp.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,17 +30,34 @@ namespace NoteApp.Forms
         private void btnLogin_Click(object sender, EventArgs e)
         {
             UserService userService = new UserService();
+
             var userName = txtUserName.Text.Trim();
             var password = txtPassword.Text.Trim();
+
             if (string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password))
             {
                 lblStatus.Text = "Please fill in all fields.";
                 lblStatus.ForeColor = Color.Red;
                 return;
             }
-            if (userService.UserLogin(userName, password))
-            {  
-                FormMain formMain = new FormMain();
+            var user = userService.UserLogin(userName, password);
+
+            if (user != null)
+            {
+                TokenGenerator tokenGenerator = new TokenGenerator();
+                string token = tokenGenerator.GenerateJwtToken(user.UserName, user.Id);
+
+                TokenValidator tokenValidator = new TokenValidator();
+                var principal = tokenValidator.ValidateJwtToken(token);
+
+                if (principal == null)
+                {
+                    lblStatus.Text = "Token doğrulanamadı.";
+                    lblStatus.ForeColor = Color.Red;
+                    return;
+                }
+
+                FormMain formMain = new FormMain(token);
                 formMain.Show();
                 this.Hide();
             }

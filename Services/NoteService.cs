@@ -23,7 +23,7 @@ namespace NoteApp.Services
             return result > 0;
         }
 
-        public List<NoteDto> GetAllNotes(int userId = 1)
+        public List<NoteDto> GetAllNotes(int userId)
         {
             var notes = new List<NoteDto>();
 

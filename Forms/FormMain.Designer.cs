@@ -45,6 +45,7 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnList = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -200,11 +201,22 @@
             this.btnList.UseVisualStyleBackColor = true;
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(350, 300);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(99, 49);
+            this.btnLogout.TabIndex = 22;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1189, 449);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnList);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lblStatus);
@@ -246,5 +258,6 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnList;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

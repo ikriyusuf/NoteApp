@@ -1,8 +1,10 @@
 ﻿using NoteApp.Entities;
+using NoteApp.JWT;
 using NoteApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -11,9 +13,29 @@ namespace NoteApp.Forms
     public partial class FormMain : Form
     {
         private int selectedNoteId = -1;
-        public FormMain()
+        private readonly int _userId;
+        private readonly string _username;
+
+        public FormMain(string token)
         {
             InitializeComponent();
+
+            TokenValidator tokenValidator = new TokenValidator();
+            var principal = tokenValidator.ValidateJwtToken(token);
+
+            if (principal != null)
+            {
+                _username = principal.FindFirst("username")?.Value;
+
+                string idString = principal.FindFirst("id")?.Value;
+                _userId = int.TryParse(idString, out int parsedId) ? parsedId : -1;
+            }
+            else
+            {
+                MessageBox.Show("Token geçersiz!");
+                this.Close();
+            }
+            this.Text = $"Not Uygulaması - Kullanıcı: {_username}";
         }
         NoteService noteService = new NoteService();
         private void FormMain_Load(object sender, EventArgs e)
@@ -47,8 +69,6 @@ namespace NoteApp.Forms
                 }
             }
 
-            int userid = 1;
-
             if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(content) || priorityButtons.All(rb => !rb.Checked))
             {
                 lblStatus.Text = "Başlık, içerik ve öncelik seçimi zorunludur.";
@@ -60,7 +80,7 @@ namespace NoteApp.Forms
                 Title = title,
                 Content = content,
                 Priority = priority,
-                UserId = userid
+                UserId = _userId
             };
             if (noteService.CreateNote(note))
             {
@@ -80,7 +100,7 @@ namespace NoteApp.Forms
 
         public void LoadNotes()
         {
-            var notes = noteService.GetAllNotes();
+            var notes = noteService.GetAllNotes(_userId);
             dataGridView1.DataSource = notes;
             dataGridView1.Columns["Id"].Visible = false;
         }
@@ -131,8 +151,6 @@ namespace NoteApp.Forms
                 }
             }
 
-            int userid = 1;
-
             if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(content) || priorityButtons.All(rb => !rb.Checked))
             {
                 lblStatus.Text = "Başlık, içerik ve öncelik seçimi zorunludur.";
@@ -145,7 +163,7 @@ namespace NoteApp.Forms
                 Title = title,
                 Content = content,
                 Priority = priority,
-                UserId = userid,
+                UserId = _userId,
             };
             if (noteService.UpdateNote(note))
             {
@@ -193,6 +211,18 @@ namespace NoteApp.Forms
         private void btnList_Click(object sender, EventArgs e)
         {
             LoadNotes();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Çıkış yapmak istediğinize emin misiniz?", "Çıkış", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                ClearFields();
+                FormLogin loginForm = new FormLogin();
+                loginForm.Show();
+                this.Close();
+            }
         }
     }
 }
